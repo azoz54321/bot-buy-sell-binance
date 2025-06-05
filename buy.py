@@ -3,24 +3,27 @@ import pandas as pd
 from binance.helpers import round_step_size
 from binance.client import Client
 
-st.sidebar.title("🔐 معلومات الدخول")
+# st.sidebar.title("🔐 معلومات الدخول")
 
-api_key = st.sidebar.text_input("API Key")
-api_secret = st.sidebar.text_input("API Secret", type="password")
+# api_key = st.sidebar.text_input("API Key")
+# api_secret = st.sidebar.text_input("API Secret", type="password")
 
-if api_key and api_secret:
-    client = Client(api_key=api_key, api_secret=api_secret)
-    try:
-        # اختبار بسيط للتأكد من أن المفاتيح صحيحة
-        client.get_account()
-        st.success("✅ تم التحقق من API بنجاح!")
-    except Exception as e:
-        st.error("❌ فشل التحقق من API - تأكد من صحة المفاتيح!")
-        st.stop()
-else:
-    st.warning("🛑 الرجاء إدخال مفاتيح API للاستمرار.")
-    st.stop()
+# if api_key and api_secret:
+#     client = Client(api_key=api_key, api_secret=api_secret)
+#     try:
+#         # اختبار بسيط للتأكد من أن المفاتيح صحيحة
+#         client.get_account()
+#         st.success("✅ تم التحقق من API بنجاح!")
+#     except Exception as e:
+#         st.error("❌ فشل التحقق من API - تأكد من صحة المفاتيح!")
+#         st.stop()
+# else:
+#     st.warning("🛑 الرجاء إدخال مفاتيح API للاستمرار.")
+#     st.stop()
 
+Pkey = '4KEsUb2zuZcGHbT9wYSHcBQtCLqxBQJWmaSAphujUH5ycdCMjY7YN13RYqwMcI0G' 
+Skey = '0MI1Vuz0r6AitKyn9Rm6MQ11oCK8RubuVJci3Ps9AwcbHWDxHj57zD09B266eT5M'
+client = Client(api_key=Pkey, api_secret=Skey) 
 
 # دالة تنسيق الرمز
 def format_symbol(symbol):
